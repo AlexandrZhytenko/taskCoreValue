@@ -1,11 +1,5 @@
 from draw_graph import G
 
-# The function defines the path between two nodes. It takes a graph G from draw_graph.py,
-# the start and end nodes as arguments. Returns the list of nodes
-# (including the beginning and ending nodes) that are included in the search path.
-# If no path can be found, it returns None.
-# The same node will enter no more than once in the return path.
-
 def find_path(graph=G, start="start", end="end", path=[]):
     path = path + [start]
     if start == end:
@@ -48,4 +42,5 @@ if __name__ == "__main__":
     print find_shortest_path()
     print "all_shortest_path:"
     print find_all_shortest_paths()
+
 

@@ -13,8 +13,10 @@ Results of the task:
 	The shortest path length is: 4 step
 	The shortest_path: ['start', '1', '4', '5', 'finish']
 	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
-about execution
-For the next step I thought about some simple solutions.
+Time execute is
+	For find the shortest path (shortest_paths_generic_shortest_path()) => 0.000000513185269 sec
+	For find all shortest paths (shortest_paths_generic_shortest_path()) => 0.000000000000000 sec
+For the next step I thought about some simple solutions.
 First opinion:
 	The function defines the path between two nodes. It takes a graph G from draw_graph.py,
 	the start and end nodes as arguments. Returns the list of nodes
@@ -32,4 +34,6 @@ Results of the task:
 	The shortest path length is: 4 step
 	The shortest_path: ['start', '1', '4', '5', 'finish']
 	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
-
+Time execute is
+	For find the shortest path (find_shortest_path()) => 0.000000513185269 sec
+	For find all shortest paths (find_all_shortest_paths()) => 0.000000513185269 sec

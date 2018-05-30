@@ -2,6 +2,7 @@
 
 from networkx_tools import *
 from simpe_solution import *
+from time_execute import *
 from draw_graph import G
 
 with open("results.txt", "w") as file:
@@ -25,9 +26,16 @@ with open("results.txt", "w") as file:
     file.write("\t" + "All shortest paths are: {}".format(shortest_paths_generic_all_shortest_paths()))
     file.write("\n")
     file.write("\r")
-    file.write("about execution")
+    file.write("Time execute is")
     file.write("\n")
-    file.write("\r")
+    file.write("\t")
+    file.write("For find the shortest path (shortest_paths_generic_shortest_path()) => {0:.15f} sec".\
+               format(time_execute(shortest_paths_generic_shortest_path())))
+    file.write("\n")
+    file.write("\t")
+    file.write("For find all shortest paths (shortest_paths_generic_shortest_path()) => {0:.15f} sec". \
+               format(time_execute(shortest_paths_generic_all_shortest_paths())))
+    file.write("\n")
     file.write("For the next step I thought about some simple solutions.")
     file.write("\n")
     file.write("\r")
@@ -64,3 +72,13 @@ with open("results.txt", "w") as file:
     file.write("\t" + "All shortest paths are: {}".format(find_all_shortest_paths()))
     file.write("\n")
     file.write("\r")
+    file.write("Time execute is")
+    file.write("\n")
+    file.write("\t")
+    file.write("For find the shortest path (find_shortest_path()) => {0:.15f} sec". \
+               format(time_execute(find_shortest_path())))
+    file.write("\n")
+    file.write("\t")
+    file.write("For find all shortest paths (find_all_shortest_paths()) => {0:.15f} sec". \
+               format(time_execute(find_all_shortest_paths())))
+    file.write("\n")
