@@ -1,7 +1,7 @@
 Results of the task:
 Open 'graph.png' file where you can see the input graph.
 At first I started using standard tools:
-*It's from 'networkx' library, so I have this results:
+*It's from 'networkx' library, so I have this results (networkx_tools.py):
 	Is there path from start to finish: True
 	Available probable paths:
 	['start', '1', '2', '7', '6', 'finish']
@@ -13,3 +13,23 @@ Results of the task:
 	The shortest path length is: 4 step
 	The shortest_path: ['start', '1', '4', '5', 'finish']
 	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
+about execution
+For the next step I thought about some simple solutions.
+First opinion:
+	The function defines the path between two nodes. It takes a graph G from draw_graph.py,
+	the start and end nodes as arguments. Returns the list of nodes
+	(including the beginning and ending nodes) that are included in the search path.
+	If no path can be found, it returns None.
+	The same node will enter no more than once in the return path.
+	So I have this results (simple_solution.py):
+		Available probable paths:
+	['start', '1', '2', '7', '6', 'finish']
+	['start', '1', '2', '8', '7', '6', 'finish']
+	['start', '1', '4', '5', 'finish']
+	['start', '2', '1', '4', '5', 'finish']
+	['start', '2', '7', '6', 'finish']
+	['start', '2', '8', '7', '6', 'finish']
+	The shortest path length is: 4 step
+	The shortest_path: ['start', '1', '4', '5', 'finish']
+	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
+

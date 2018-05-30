@@ -1,6 +1,7 @@
 # to write given information into txt file
 
 from networkx_tools import *
+from simpe_solution import *
 from draw_graph import G
 
 with open("results.txt", "w") as file:
@@ -9,7 +10,7 @@ with open("results.txt", "w") as file:
     file.write("Open 'graph.png' file where you can see the input graph." + "\n")
     file.write("\r")
     file.write("At first I started using standard tools:" + "\n")
-    file.write("*It's from 'networkx' library, so I have this results:" + "\n")
+    file.write("*It's from 'networkx' library, so I have this results (networkx_tools.py):" + "\n")
     file.write("\t" + "Is there path from start to finish: {}"\
         .format(algorithms.shortest_paths.generic.has_path(G, source="start", target="finish")) + "\n")
     file.write("\t" + "Available probable paths:" + "\n")
@@ -22,4 +23,44 @@ with open("results.txt", "w") as file:
     file.write("\t" + "The shortest_path: {}".format(shortest_paths_generic_shortest_path()))
     file.write("\n")
     file.write("\t" + "All shortest paths are: {}".format(shortest_paths_generic_all_shortest_paths()))
-
+    file.write("\n")
+    file.write("\r")
+    file.write("about execution")
+    file.write("\n")
+    file.write("\r")
+    file.write("For the next step I thought about some simple solutions.")
+    file.write("\n")
+    file.write("\r")
+    file.write("First opinion:")
+    file.write("\n")
+    file.write("\t")
+    file.write("The function defines the path between two nodes. It takes a graph G from draw_graph.py,")
+    file.write("\n")
+    file.write("\t")
+    file.write("the start and end nodes as arguments. Returns the list of nodes")
+    file.write("\n")
+    file.write("\t")
+    file.write("(including the beginning and ending nodes) that are included in the search path.")
+    file.write("\n")
+    file.write("\t")
+    file.write("If no path can be found, it returns None.")
+    file.write("\n")
+    file.write("\t")
+    file.write("The same node will enter no more than once in the return path.")
+    file.write("\n")
+    file.write("\t")
+    file.write("So I have this results (simple_solution.py):")
+    file.write("\n")
+    file.write("\t")
+    file.write("\t" + "Available probable paths:" + "\n")
+    for path in find_all_paths():
+        file.write("\t")
+        file.write(str(path))
+        file.write("\n")
+    file.write("\t" + "The shortest path length is: {}".format(len(find_shortest_path()) - 1) + " step")
+    file.write("\n")
+    file.write("\t" + "The shortest_path: {}".format(find_shortest_path()))
+    file.write("\n")
+    file.write("\t" + "All shortest paths are: {}".format(find_all_shortest_paths()))
+    file.write("\n")
+    file.write("\r")
