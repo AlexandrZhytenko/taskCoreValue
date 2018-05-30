@@ -16,7 +16,7 @@ It's from 'networkx' library, so I have this results from networkx_tools.py file
 	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
 Time execute is
 	For find the shortest path (shortest_paths_generic_shortest_path()) => 0.000000513185269 sec
-	For find all shortest paths (shortest_paths_generic_all_shortest_paths()) => 0.000000000000000 sec
+	For find all shortest paths (shortest_paths_generic_all_shortest_paths()) => 0.000000513185269 sec
 For the next step I thought about some simple solutions.
 First opinion:
 	The function defines the path between two nodes. It takes a graph G from draw_graph.py file,
@@ -36,9 +36,9 @@ It's from 'networkx' library, so I have this results from networkx_tools.py file
 	The shortest_path: ['start', '1', '4', '5', 'finish']
 	All shortest paths are: [['start', '1', '4', '5', 'finish'], ['start', '2', '7', '6', 'finish']]
 Time execute is
-	For find the shortest path (find_shortest_path()) => 0.000000513185269 sec
+	For find the shortest path (find_shortest_path()) => 0.000001539555807 sec
 	For find all shortest paths (find_all_shortest_paths()) => 0.000000513185269 sec
 Differences: 
-	For find the shortest path functions) => 0.000000513185269 sec
-	For find all shortest paths functions => -0.000000000000000 sec
+	For find the shortest path functions) => -0.000000513185269 sec
+	For find all shortest paths functions => 0.000000000000000 sec
 	Thank you for interesting task!
