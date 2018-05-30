@@ -6,12 +6,15 @@ from time_execute import *
 from draw_graph import G
 
 with open("results.txt", "w") as file:
+    file.write("All scripts you can see this: https://github.com/AlexandrZhytenko/taskCoreValue")
+    file.write("\n")
+    file.write("\r")
     file.write("Results of the task:" + "\n")
     file.write("\r")
     file.write("Open 'graph.png' file where you can see the input graph." + "\n")
     file.write("\r")
     file.write("At first I started using standard tools:" + "\n")
-    file.write("*It's from 'networkx' library, so I have this results (networkx_tools.py):" + "\n")
+    file.write("It's from 'networkx' library, so I have this results from networkx_tools.py file:" + "\n")
     file.write("\t" + "Is there path from start to finish: {}"\
         .format(algorithms.shortest_paths.generic.has_path(G, source="start", target="finish")) + "\n")
     file.write("\t" + "Available probable paths:" + "\n")
@@ -33,16 +36,17 @@ with open("results.txt", "w") as file:
                format(time_execute(shortest_paths_generic_shortest_path())))
     file.write("\n")
     file.write("\t")
-    file.write("For find all shortest paths (shortest_paths_generic_shortest_path()) => {0:.15f} sec". \
+    file.write("For find all shortest paths (shortest_paths_generic_all_shortest_paths()) => {0:.15f} sec". \
                format(time_execute(shortest_paths_generic_all_shortest_paths())))
     file.write("\n")
+    file.write("\r")
     file.write("For the next step I thought about some simple solutions.")
     file.write("\n")
     file.write("\r")
     file.write("First opinion:")
     file.write("\n")
     file.write("\t")
-    file.write("The function defines the path between two nodes. It takes a graph G from draw_graph.py,")
+    file.write("The function defines the path between two nodes. It takes a graph G from draw_graph.py file,")
     file.write("\n")
     file.write("\t")
     file.write("the start and end nodes as arguments. Returns the list of nodes")
@@ -57,7 +61,7 @@ with open("results.txt", "w") as file:
     file.write("The same node will enter no more than once in the return path.")
     file.write("\n")
     file.write("\t")
-    file.write("So I have this results (simple_solution.py):")
+    file.write("So I have this results from simple_solution.py file:")
     file.write("\n")
     file.write("\t")
     file.write("\t" + "Available probable paths:" + "\n")
@@ -82,3 +86,20 @@ with open("results.txt", "w") as file:
     file.write("For find all shortest paths (find_all_shortest_paths()) => {0:.15f} sec". \
                format(time_execute(find_all_shortest_paths())))
     file.write("\n")
+    file.write("\r")
+    file.write("Differences: ")
+    file.write("\n")
+    file.write("\t")
+    file.write("For find the shortest path functions) => {0:.15f} sec".\
+               format(time_execute(shortest_paths_generic_shortest_path()) - time_execute(find_shortest_path())))
+    file.write("\n")
+    file.write("\t")
+    file.write("For find all shortest paths functions => {0:.15f} sec".\
+               format(time_execute(shortest_paths_generic_all_shortest_paths()) - time_execute(find_all_shortest_paths())))
+
+    file.write("\r")
+    file.write("\n")
+    file.write("\t")
+    file.write("Thank you for interesting task!")
+
+
